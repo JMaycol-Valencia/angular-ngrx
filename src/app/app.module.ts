@@ -6,6 +6,7 @@ import {AppComponent} from './app.component';
 import {StoreModule} from "@ngrx/store";
 import {environment} from "../environments/environment";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
+import {itemsReducer} from "./state/reducers/items.reducers";
 
 
 @NgModule({
@@ -16,7 +17,9 @@ import {StoreDevtoolsModule} from "@ngrx/store-devtools";
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot({
+      estadoDeItems: itemsReducer
+    }, {}),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production
