@@ -1,11 +1,8 @@
 import {createReducer, on} from "@ngrx/store";
-import {ItemModel} from "@core/models/Item.interface";
 import {loadItems} from "../actions/items.actions";
+import {ItemsState} from "@core/models/items.state";
 
-export const initialState: {
-  loading: boolean;
-  items: ReadonlyArray<ItemModel>;
-} = {
+export const initialState: ItemsState = {
   loading: false,
   items: []
 };
